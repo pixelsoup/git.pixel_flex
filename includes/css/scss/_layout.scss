@@ -1,0 +1,58 @@
+/* ===================================
+Layout
+=================================== */
+/*
+BOX-SIZING
+Set the global `box-sizing` state to `border-box`
+https://github.com/inuitcss/generic.box-sizing
+Paul Irish
+http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+* {
+	&,
+	&:before,
+	&:after {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+}
+/*
+Modernizr file has been updated to include 'main'å for IE
+*/
+.box-main {
+	padding: 1em;
+	@media screen and (min-width: $bp-md){
+		padding: 1.5em;
+	}
+}
+
+.box-main-sm {
+	padding: 0 .5em;
+	@media screen and (min-width: $bp-md){
+		padding: 0 1em;
+	}
+}
+
+.box-sm { padding: .5em; }
+
+.box-featured-text {
+	padding: 1em;
+
+	@media screen and (min-width: $bp-md) {
+		padding: 1em 90px 1em 1em;
+	}
+}
+
+.box-header {
+	padding: 0 1em;
+	@media screen and (min-width: $bp-md){
+		padding: 0 1.5em;
+	}
+}
+.box-header-sm {
+	padding: 0 0.3em;
+	@media screen and (min-width: $bp-md){
+		padding: 0 0.5em;
+	}
+}

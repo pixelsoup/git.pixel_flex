@@ -1,0 +1,284 @@
+body {
+	@include primaryFontStack;
+	line-height: 1.5rem;
+	margin: 0;
+	background-color: tan;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	-webkit-font-smoothing: antialiased;
+}
+
+main {
+	background-color: MediumAquamarine;
+	flex: 1;
+}
+
+p {
+	font-size: 14px;
+	line-height: 1.5rem;
+}
+
+img {
+	max-width: 100%;
+}
+
+.header {
+	background: #0c232a;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+
+	.logo {
+		color: #fff;
+	}
+}
+
+.nav-wrapper {
+	margin-left: -1rem;
+}
+
+.flexbox .nav-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+
+	@media screen and (min-width: $bp-sm) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	// display: flex; /* or inline-flex
+	// flex-direction: row | row-reverse | column | column-reverse;
+	// flex-wrap: nowrap | wrap | wrap-reverse;
+	// flex-flow: <‘flex-direction’> || <‘flex-wrap’> (shorthand)
+
+	// justify-content: flex-start | flex-end | center | space-between | space-around;
+	//  align-items: flex-start | flex-end | center | baseline | stretch;
+
+	// align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+	// Note: this property has no effect when there is only one line of flex items.
+}
+
+.box {
+	@include primaryFontStackBold;
+	-webkit-font-smoothing: antialiased;
+	color: #fff;
+	background: $black50;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	text-align: center;
+	margin: 0 0 1rem 1rem;
+
+	p {
+		font-size: 1rem;
+		line-height: 1rem;
+		margin: 0;
+	}
+}
+
+.flexbox .box-1,
+.flexbox .box-4,
+.flexbox .box-5,
+.flexbox .box-6,
+.flexbox .box-7 {
+	flex: 1 1 auto;
+}
+
+.flexbox .box-2,
+.flexbox .box-3 {
+	flex: 2 1 auto;
+
+	@media screen and (min-width: 950px) {
+		flex: 2 1 250px;
+	}
+	@media screen and (min-width: 1067px) {
+	flex: 2 1 auto;
+	}
+}
+
+
+//  order: <integer>;
+//  flex-grow: <number>; /* default 0 */
+//  flex-shrink: <number>; /* default 1 */
+//  flex-basis: <length> | auto; /* default auto */
+
+//  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+//Note that float, clear and vertical-align have no effect on a flex item.
+
+//shorthand - flex-shrink and flex-basis are optional. Default is 0 1 auto
+//  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+
+//flex: none                                            /* value 'none' case */
+//flex: <'flex-grow'>                                   /* One value syntax, variation 1 */
+//flex: <'flex-basis'>                                  /* One value syntax, variation 2 */
+//flex: <'flex-grow'> <'flex-basis'>                    /* Two values syntax, variation 1 */
+//flex: <'flex-grow'> <'flex-shrink'>                   /* Two values syntax, variation 2 */
+//flex: <'flex-grow'> <'flex-shrink'> <'flex-basis'>    /* Three values syntax */
+//flex: inherit
+
+.label-wrapper {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	label {
+		@include primaryFontStackBold;
+		margin-right: 1rem;
+		flex-basis: 100%; // width: 100% also works
+		@media screen and (min-width: $bp-md) {
+			flex-basis: 25%; // width: 25% also works
+		}
+	}
+
+	input,
+	textarea {
+		font-size: 14px;
+		padding: 6px 11px;
+		background-color: $black3;
+		border: 5px solid $black15;
+		flex-grow: 3;
+	}
+
+	select {
+		font-size: 14px;
+		height: 45px;
+		border: 5px solid $black15;
+		border-radius: 3px;
+		flex-basis: 250px;
+	}
+
+	.btn {
+		color: $black70;
+		background-color: $black15;
+
+		@media screen and (min-width: $bp-sm) {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			border-width: 0;
+		}
+	}
+}
+
+.input-wrapper {
+	justify-content: space-between;
+
+	label {
+		align-self: center;
+	}
+}
+
+.textarea-wrapper {
+	label {
+		align-self: flex-start;
+	}
+}
+
+
+
+.home-promo-wrapper-bg {
+	padding: 1rem;
+	background: #fff;
+	border-radius: 8px;
+	margin: 1rem 0;
+
+	.home-promo-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -1rem;
+	}
+
+	.home-promo-u {
+		margin: 0 0 1rem 1rem;
+
+		flex: 1;
+		flex-basis: 250px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.promo-u-img {
+		border-radius: 5px;
+		border: 1px solid $black40;
+	}
+
+	.promo-u-heading {
+		margin-bottom: 0;
+	}
+
+	.promo-u-text {
+		margin-top: .3rem;
+	}
+
+	.btn {
+		margin-top: auto;
+	}
+}
+
+.column-text {
+
+	@media screen and (min-width: $bp-md) {
+		column-count: 2;
+	}
+
+	@media screen and (min-width: $bp-lg) {
+		column-count: 3;
+		column-gap: 1rem;
+	}
+}
+
+.footer {
+	background: #0c232a;
+
+	p {
+		color: #fff;
+	}
+}
+
+.csstransitions .btn {
+	transition: background-color 0.5s ease;
+}
+
+a.btn {
+	text-decoration: none;
+}
+
+.btn {
+	@include primaryFontStackBold;
+	font-size: 16px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	color: white;
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 10px 20px;
+	background-color: darken(teal, 10%);
+	background-image: none;
+	border: 3px solid rgba(255, 255, 255, 0.5);
+	border-bottom-color: rgba(255, 255, 255, 0.5);
+	border-bottom-width: 3px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: teal;
+}
+
+/* ===================================
+IE Exceptions
+=================================== */
+
+.lt-ie10 .box {
+	float: left;
+}
+
+
+
