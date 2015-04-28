@@ -1,2 +1,3 @@
-config.codekit
-flexbox
+**/config.codekit
+**/.sass-cache
+flexbox/*
