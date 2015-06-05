@@ -45,7 +45,7 @@ img {
 .flexbox .nav-wrapper {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
+	flex-wrap: no-wrap;
 
 	@media screen and (min-width: $bp-sm) {
 		flex-direction: row;
